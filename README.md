@@ -1,5 +1,5 @@
 # HTML-CSS-JS-jQuery
-A repository of my studies of HTML, CSS, JS, jQuery and Ajax, &amp; Node.js <br>
+A repository of my studies of HTML, CSS, JS, &amp; jQuery and Ajax <br>
 
 ### Start studying Node.js
 > Basics of Node.js <br>
