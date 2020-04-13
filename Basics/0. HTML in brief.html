@@ -1,7 +1,7 @@
 <!--
     HTML is used to create the structure, the skeleton of a web page
     CSS is used to add static (unchanging) meat to the bones (ex) the background color or the company logo at the top of the page doesn't change)
-    JavaScript & jQuery is used to add moving meat to the bones (ex) move to another page when the user clicks on a button)
+    JavaScript & jQuery are used to add moving meat to the bones (ex) move to another page when the user clicks on a button)
 
     First complete the HTML structure, then fill in the CSS, then add the JavaScript or jQuery (HTML >> CSS >> JS / jQuery)
 -->
@@ -10,7 +10,7 @@
 Useful Websites
     html5test.com
     gs.statcounter.com
-    validator.w3.org -> Validation check을 실시할 수 있다 -> by inputting a url; uploading a file; or direct input (copy & paste my code)
+    validator.w3.org -> For validation check -> by inputting a url; uploading a file; or direct input (copy & paste my code)
     modernizr.com
     w3schools.com -> HTML / CSS Tutorial (mozilla보다 쉽게 설명하고 특히 reference 부분이 우수하다!)
     developer.mozilla.org -> HTML Tutorial (HTML에 있어서 가장 정확하고 체계적인 정보를 제공!)
@@ -106,13 +106,12 @@ form tag (속성으로 id & name, 별도 태그로 label 태그를 항상 사용
                       -> 모든 HTML 요소의 부모 요소; 웹페이지마다 단 하나 존재; DTD태그를 제외한 다른 모든 요소는 HTML 태그에 위치해야 한다. -->
 <head> <!-- head 태그
             -> 메타데이터를 표시하기 위한 요소
-            -> metadata = 데이터의 데이터 / data about the data (ex. CSS 이용한 디자인 설정, 콘텐츠의 위치와 내용 설명 등) -->
-    <meta charset="UTF-8"> <!-- Meta 태그
-                                -> 기타 메타데이터 정의에 사용 (ex. "charset"은 브라우저가 사용할 문자셋을 정의) -->
+            -> metadata = data about the data (ex. CSS 이용한 디자인 설정, 콘텐츠의 위치와 내용 설명 등) -->
+    <!-- Meta 태그 -> 기타 메타데이터 정의에 사용 (ex. "charset"은 브라우저가 사용할 문자셋을 정의) -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML Brief</title> <!-- title 태그
-                                 -> 문서의 제목; 브라우저 탭에 표시되는 내용이다. -->
+    <title>HTML Brief</title> <!-- title 태그 -> 문서의 제목; 브라우저 탭에 표시되는 내용이다. -->
     
     <style> /* style 태그
                -> CSS를 이용해서 웹페이지를 꾸며주는 내용이 들어가는 태그이다.
@@ -120,16 +119,15 @@ form tag (속성으로 id & name, 별도 태그로 label 태그를 항상 사용
             */ 
     </style>
     
-    <link rel="stylesheet" href=""> <!-- link 태그
-        -> 외부 리소스와 연계된 정보를 표시하는 태그; 주로 CSS와 연계에서 사용한다.  -->
+    <link rel="stylesheet" href=""> <!-- link 태그 -> 외부 리소스와 연계된 정보를 표시하는 태그; 주로 CSS와 연계에서 사용한다.  -->
     
     <script> /* script 태그
                 -> 웹페이지를 동적으로 꾸며주는 내용이 들어가는 태그이다.
                 -> script 태그 안에서는 주석 처리 방식이 다르다.
                 -> script 태그는 어디에 위치해도 기능적으로는 상관 없지만, 원칙적으로는 body 태그의 끝에 위치한다!
-                    -> 브라우저는 HTML 페이지를 쭉~ 위에서 아래로 읽는다
-                    -> 중간에 script를 보면 그자리에서 실행한다
-                        -> BUT 대부분의 script는 DOM을 조작하는 것, DOM이 완성되어야 가능한 것
+                    -> 브라우저는 HTML 페이지를 쭉~ 위에서 아래로 읽는다.
+                    -> 중간에 script를 보면 그자리에서 실행한다.
+                        -> BUT 대부분의 script는 DOM을 조작하는 것, DOM이 완성되어야 가능한 것이다.
                         -> 즉 중간에 script를 실행할 수 없고 브라우저는 시간만 버린다.
                 */
     </script>
@@ -251,14 +249,14 @@ form tag (속성으로 id & name, 별도 태그로 label 태그를 항상 사용
         width 속성 -> 이미지의 넓이 (일반적으로 CSS에서 지정한다)
         height 속성 -> 이미지의 높이 (일반적으로 CSS에서 지정한다)
     -->
-    <img src="Firenze2018.JPG" alt="NO Image" width="300" height="300">
+    <img src="../Firenze2018.JPG" alt="NO Image" width="300" height="300">
     <br>
 
     <!-- audio 태그
         src 속성 -> 음악 파일 경로
         preload 속성 -> 재생 전에 음악 파일을 모두 불러올 것인지 지정
-        autoplay -> 음악 파일을 자동으로 재생 개시할 것인지 지정
-        loop -> 음악을 반복할 것인지 지정
+        autoplay 속성 -> 음악 파일을 자동으로 재생 개시할 것인지 지정
+        loop 속성 -> 음악을 반복할 것인지 지정
         controls 속성 -> 음악 재생 도구를 표시할 것인지 지정; 재생 도구의 외관은 브라우저마다 차이가 있다.
     -->
     <audio src="Monster.mp3" preload="auto" autoplay loop controls></audio>
@@ -274,7 +272,7 @@ form tag (속성으로 id & name, 별도 태그로 label 태그를 항상 사용
         width 속성 -> 동영상의 넓이를 지정
         height 속성 -> 동영상의 높이를 지정
     -->
-    <video src="https://www.youtube.com/watch?v=gl1aHhXnN1k" poster="Firenze2018.jpg" preload="auto" autoplay loop controls width="600" height="400"></video>
+    <video src="https://www.youtube.com/watch?v=Bq6IuZIJhuI" poster="Firenze2018.jpg" preload="auto" autoplay loop controls width="600" height="400"></video>
     <br>
 
     <!-- form 태그
@@ -350,7 +348,7 @@ form tag (속성으로 id & name, 별도 태그로 label 태그를 항상 사용
 
         <!-- progress 태그
             특징 -> 작업의 진행상태를 나타내는데 사용하는 태그
-            value 속성 -> 작업 진생상태를 실수로 표현; 0 <= value <= max
+            value 속성 -> 작업 진행상태를 실수로 표현; 0 <= value <= max
             max 속성 -> 작업이 완료되었을 때의 값; 0보다 커야하며, 지정하지 않았을 경우 1.0으로 간주
         -->
         <label>현재 진행상황</label>
