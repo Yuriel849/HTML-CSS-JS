@@ -103,8 +103,7 @@ CSS의 단위
                     >> 명시적으로 어느 경계인지 지정하지 않으면, 위 순서대로 지정된다!!!
                         ex) padding: 100px -> 4개 경계 모두에 적용
                         ex) padding: 100px 150px -> 위 / 아래 경계는 100px, 오른쪽 / 왼쪽 경계는 150px 적용
-                                                 -> top border is 100px, right is 150px, then... what about bottom? bottom copies top
-                                                    then what about left? left copies right
+                                                 -> top border is 100px, right is 150px, bottom copies top & left copies right
             Border area
                 Content / padding areas를 둘러싼 영역
                 위(border-top), 오른쪽(border-right), 아래(border-bottom), 왼쪽(border-left) 경계에 개별적으로 적용 가능
@@ -137,8 +136,7 @@ CSS의 단위
             border-style: solid;
             border-color: red;
             margin: 100px 150px 100px 150px;
-            /* p5의 width 800px = contents width 200px + padding 300px (양옆 150px씩)
-                                    + margin 300px (양옆 150px씩) */
+            /* p5의 width 800px = contents width 200px + padding 300px (양옆 150px씩) + margin 300px (양옆 150px씩) */
         }
         #p6 {
             padding: 100px 150px; /* padding: 100px 150px 100px 150px와 동일 */
@@ -153,8 +151,7 @@ CSS의 단위
             padding: 100px;
             border-style: dotted;
             border-width: 2px 10px 4px 20px;
-            outline: 50px groove orangered;
-                /* outline-width, outline-style, outline-color를 한 줄에 담은 것 */
+            outline: 50px groove orangered; /* outline-width, outline-style, outline-color를 한 줄에 담은 것 */
             margin: 100px /* 모든 margin이 동일 */
         }
         #p8 {
@@ -230,18 +227,13 @@ CSS의 단위
         }
 
         /*
-        CSS Tables
-
-        */
-
-        /*
-        CSS Layout --> "04. Layoud_Sort.html" 볼 것!
+        CSS Layout --> "04. Layout_Sort.html" 볼 것!
             Block 요소 VS Inline 요소
                 display: block -> 항상 새로운 줄에서 시작, 폭 전체를 차지
-                    대표족으로 <div>, <h$>, <p>, <form>, <header> 등
+                    대표적으로 <div>, <h$>, <p>, <form>, <header> 등
                 display: inline -> 새로운 라인에서 시작하지 않고, 필요한 만큼의 영역만 차지하며 옆으로 나열할 수 있다.
                     대표적으로 <span>, <a>, <img> 등
-                display: inline-blick -> 균일한 폭과 높이로 맞춰진다.
+                display: inline-block -> 균일한 폭과 높이로 맞춰진다.
             Display 속성 VS Visibility 속성
                 Display를 none으로 설정하면 화면에서 보이지 않고 영역도 유지하지 않는다. (원래 있던 공간이 비어버린다.)
                 Visibility를 hidden으로 하면 화면에서 보이지 않지만 영역은 유지한다. (원래 있던 곳에 빈공간이 생긴다.)
@@ -265,7 +257,7 @@ CSS의 단위
                     -> 기본값이다!!!
                 box-sizing: border-box
                     -> contents, padding, border를 하나로 묶기 떄문에 크기 계산이 쉽다.
-                    -> border-box로 설정하면, 크기를 지정할 때 contents, padding, border 묶음의 크기를 지정하는 것이다.
+                    -> border-box로 설정하면, 크기를 지정할 때 contents + padding + border 묶음의 크기를 지정하는 것이다.
         */
 
         /*
@@ -321,7 +313,7 @@ CSS의 단위
 <body>
     <!-- CSS로 color 지정하는 방법 01 -->
     <h2 style="background-color:red">NUMBER  1</h2>
-    <h2 style="background-color:#00ff00">NUMBER  2</h2> <!-- NUMBER2 & NUMBER3는 같다!-->
+    <h2 style="background-color:#00ff00">NUMBER  2</h2>        <!-- NUMBER2 & NUMBER3는 같다!-->
     <h2 style="background-color:rgb(0, 255, 0)">NUMBER  3</h2> <!-- NUMBER2는 16진수로 표현, NUMBER3는 rgb(숫자)로 표현  -->
 
     <!-- CSS로 color 지정하는 방법 02 -> head 태그의 style 태그 볼 것! -->
@@ -338,8 +330,8 @@ CSS의 단위
     <p id="p6" style="cursor:nw-resize">NUMBER  9</p>
     <p id="p7" style="cursor:progress">NUMBER 10</p>
 
-    <img id="p8" src="v3.jpg" alt="">
-    <img id="p9" src="v3.jpg" alt=""><br><br>
+    <img id="p8" src="../v3.jpg" alt="">
+    <img id="p9" src="../v3.jpg" alt=""><br><br>
     <i class="fa fa-cloud"></i> <!-- 구름 모양의 아이콘 출력하기 -->
 
     <br><br>
@@ -352,6 +344,5 @@ CSS의 단위
         <li>Red Bull</li>
         <li>Slow Cow</li>
     </ul>
-
 </body>
 </html>
