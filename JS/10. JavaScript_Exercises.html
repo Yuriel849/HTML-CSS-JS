@@ -1,0 +1,25 @@
+<!-- JavaScript Exercises on 06.12.2018 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Exercises</title>
+</head>
+<body>
+    <script>
+        function sum(a,b) {
+            var result = 0
+
+            for(var i = 0; i < arguments.length; i++)
+                result += arguments[i]
+            console.log("i is..." + i) // Printed to console only ONCE because the for loop has no brackets to indicate scope
+        }
+
+        sum(3,5)
+        // console.log(result) // Error because "result" is only defined inside the method sum()
+        // console.log(window.result)
+    </script>
+</body>
+</html>
