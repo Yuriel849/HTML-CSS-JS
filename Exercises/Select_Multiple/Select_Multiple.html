@@ -4,50 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        body {
-            display: inline
-        }
-
-        form {
-            display: inline-flex;
-        }
-        
-        li {
-            list-style-type: none;
-        }
-        
-        button {
-            width: 40px;
-            height: 60px;
-            display: inline-flex;
-            justify-content: center;
-            float: none;
-            width: 20%;
-        }
-
-        select {
-            width: 150px;
-            height: 400px;
-            font-size: 30px;
-        }
-    </style>
+    <title>Select_Multiple</title>
+    
+    <link rel="stylesheet" href="../../style/selectMultiple.css">
 </head>
 <body>
     <form action="">
         <select name="chooser" id="chooser" multiple size="10">
-            <option value="농구" id="basket" onclick="add01()">농구</option>
-            <option value="야구" id="base" onclick="add02()">야구</option>
-            <option value="축구" id="foot" onclick="add03()">축구</option>
-            <option value="탁구" id="table" onclick="add04()">탁구</option>
+            <option value="농구" id="basket" onclick="addBasketball()">농구</option>
+            <option value="야구" id="base" onclick="addBaseball()">야구</option>
+            <option value="축구" id="foot" onclick="addFootball()">축구</option>
+            <option value="탁구" id="table" onclick="addTableTennis()">탁구</option>
         </select>
 
         <ul>
-        <li><button type="button" onclick="rightOne()">&gt;</button></li>
-        <li><button type="button">&lt;</button></li>
-        <li><button type="button">&gt;&gt;</button></li>
-        <li><button type="button">&lt;&lt;</button></li>
+            <li><button type="button" onclick="rightOne()">&gt;</button></li> <!-- Only this button has an event -->
+            <li><button type="button">&lt;</button></li>
+            <li><button type="button">&gt;&gt;</button></li>
+            <li><button type="button">&lt;&lt;</button></li>
         </ul>
 
         <select name="catcher" id="catcher" multiple size="10"></select>
@@ -64,21 +38,21 @@
         var footFlag = false;
         var tableFlag = false;
 
-        function add01() {
+        function addBasketball() {
             basketFlag = !basketFlag;
             var basket = document.getElementById('basket').value;
-            if(basketFlag) {
-                if(arr.indexOf("농구") != -1) { return; }
+            if(basketFlag) { // If unchecked -> checked
+                if(arr.indexOf("농구") != -1) { return; } // Do nothing if "농구" is already in the array 'arr'
                 arr.push(basket);
                 console.log(arr);
-            } else {
+            } else { // If checked -> unchecked
                 var find = arr.indexOf(basket);
                 arr.splice(find,1);
                 console.log(arr);
             }
         }
 
-        function add02() {
+        function addBaseball() {
             baseFlag = !baseFlag;
             var base = document.getElementById('base').value;
             if(baseFlag) {
@@ -91,7 +65,8 @@
                 console.log(arr);
             }
         }
-        function add03() {
+
+        function addFootball() {
             footFlag = !footFlag;
             var foot = document.getElementById('foot').value;
             if(footFlag) {
@@ -104,7 +79,8 @@
                 console.log(arr);
             }
         }
-        function add04() {
+
+        function addTableTennis() {
             tableFlag = !tableFlag;
             var table = document.getElementById('table').value;
             if(tableFlag) {
@@ -120,25 +96,24 @@
 
         function rightOne() {
             var catcher = document.getElementById("catcher");
-            for(var i = 0; i < arr.length; i++) { 
+            for(var i = 0; i < arr.length; i++) { // Empty rightside select
                 catcher.remove(0);
             }
-            for(var i = 0; i < arr.length; i++) {
+            for(var i = 0; i < arr.length; i++) { // Add to rightside select
                 var option = document.createElement("option");
                 option.text = arr[i];
                 catcher.add(option);
             }
 
             var select = document.getElementById("chooser");
-            for(var i = 0; i < select.options.length; i++) {
-                if(arr[i] === select.options[i].text) {
-                    select.options[i] = null;
+            for(var i = 0; i < select.options.length; i++) { // Remove from leftside select
+                for(var j = 0; j < arr.length; j++) {
+                    if(arr[j] === select.options[i].text) {
+                        select.options[i] = null;
+                    }
                 }
             }
         }
-        
-        
-
     </script>
 </body>
 </html>

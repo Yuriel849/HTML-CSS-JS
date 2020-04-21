@@ -1,0 +1,22 @@
+body {
+    display: inline
+}
+form {
+    display: inline-flex;
+}
+li {
+    list-style-type: none;
+}
+button {
+    width: 40px;
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    float: none;
+    width: 20%;
+}
+select {
+    width: 150px;
+    height: 400px;
+    font-size: 30px;
+}
