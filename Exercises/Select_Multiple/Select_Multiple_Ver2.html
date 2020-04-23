@@ -31,26 +31,24 @@
         </tr>
 
         <!-- 4개의 버튼 (">", "<", ">>", "<<") -->
-        <ul>
-            <!-- <tr>
-                <li><button type="button" onclick="adder()">&gt;</button></li>
-            </tr> -->
-            <tr>
-                <td>
-                    <li><button type="button" onclick="remover()">&lt;</button></li>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    <li><button type="button" onclick="allAdder()">&gt;&gt;</button></li>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <li><button type="button" onclick="allRemover()">&lt;&lt;</button></li>
-                </th>
-            </tr>
-        </ul>
+        <!-- <tr>
+            <li><button type="button" onclick="adder()">&gt;</button></li>
+        </tr> -->
+        <tr>
+            <td>
+                <li><button type="button" onclick="remover()">&lt;</button></li>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li><button type="button" onclick="allAdder()">&gt;&gt;</button></li>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li><button type="button" onclick="allRemover()">&lt;&lt;</button></li>
+            </td>
+        </tr>
     </table>
 
     <script>
@@ -58,7 +56,6 @@
         function adder() {
             choosing = document.getElementById("chooser");
             for(i = 0; i < choosing.length; i++) {
-                console.log("MROW")
                 if(choosing[i].selected == true) {
                     catcher.add(choosing[choosing.selectedIndex]);
                     i--;
@@ -70,7 +67,6 @@
         function remover() {
             catching = document.getElementById("catcher");
             for(i = 0; i < catching.length; i++) {
-                console.log("MROW")
                 if(catching[i].selected == true) {
                     chooser.add(catching[catching.selectedIndex]);
                     i--;
