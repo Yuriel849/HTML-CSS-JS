@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Checkbox_TextArea</title>
 </head>
 <body>
-    <ul>
+    <ul style="list-style: none;">
         <li><input type="checkbox" id="all" onclick="allFunction()" value="전체선택">전체선택</li>
         <li><input type="checkbox" id="base" onclick="baseFunction()" value="야구">야구</li>
         <li><input type="checkbox" id="foot" onclick="footFunction()" value="축구">축구</li>
@@ -43,7 +43,6 @@
                 if(tableFlag) { document.getElementById('table').click() }
             }
         }
-
 
         // 사용자가 "야구"를 선택했을 경우 야구를 출력하고 삭제하는 함수
         function baseFunction() {

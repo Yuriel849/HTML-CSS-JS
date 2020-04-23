@@ -19,8 +19,7 @@
         var n = 0;
         for(i = 0; i < bingo.length; i++)
             for(j = 0; j < bingo[i].length; j++)
-                bingo[i][j] = (i*5) + (j+1)
-                // OR bingo[i][j] = ++n;
+                bingo[i][j] = (i*5) + (j+1) // OR bingo[i][j] = ++n;
            
         // 2. 배열 bingo에 저장된 숫자를 섞어라.
         for(i = 0; i < bingo.length; i++) {
@@ -32,7 +31,12 @@
                 bingo[r1][r2] = temp
             }
         }
-        
+                
+        /* Math is an object in JavaScript
+         *  Math.floor(number) -> Returns the number, rounded DOWN to the nearest integer
+         *  Math.random() -> Returns a random number between 0 (inclusive) and 1 (exclusive)
+         */
+
         // 3. 배열 bingo를 <table>로 페이지에 출력하라.
         var table = "<table border=2>"
         for(i = 0; i < bingo.length; i++) {
