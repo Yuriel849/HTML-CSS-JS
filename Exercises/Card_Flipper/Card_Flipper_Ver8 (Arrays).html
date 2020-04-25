@@ -29,8 +29,8 @@
 
     <script>
         var cardArr = []; // 카드이름(문자열) 담을 배열
-        var path = "./";
-        var back = "./back.png";
+        var path = "./Images/";
+        var back = "./Images/back.png";
 
         window.onload=function() {
             initCardArr(); // cardArr를 초기화한다.
@@ -45,7 +45,7 @@
         function initCardArr() {
             // "0" ~ "51"까지 저장
             for(i = 0; i < 52; i++) {
-                cardArr[i] = i + "";
+                cardArr[i] = i;
             }
         }
 
@@ -72,6 +72,19 @@
             var imgTagArr = document.getElementsByTagName("img");
             for(i=0; i<imgTagArr.length;i++) {
                 imgTagArr[i].onclick = clickImgTag;
+            }
+        }
+
+        // void actionPerformed(ActionEvent e)와 비슷한 원리.
+        // click한 카드 한 장을 뒤집는다.
+        function clickImgTag(e) {
+            console.dir(e);
+            var data = e.srcElement;
+            if(this.src !== "http://127.0.0.1:57803/Exercises/Card_Flipper/back.png") {
+                this.src = back;
+            }
+            else {
+                this.src = path + data.getAttribute("data-value") + ".png";
             }
         }
 
@@ -131,19 +144,6 @@
             cardArr.sort((a,b)=>(a-b));
 
             showCards();
-        }
-
-        // void actionPerformed(ActionEvent e)와 비슷한 원리.
-        // click한 카드 한 장을 뒤집는다.
-        function clickImgTag(e) {
-            console.dir(e);
-            var data = e.srcElement;
-            if(this.src !== "http://127.0.0.1:57803/Exercises/Card_Flipper/back.png") {
-                this.src = back;
-            }
-            else {
-                this.src = path + data.getAttribute("data-value") + ".png";
-            }
         }
     </script>
 </body>
