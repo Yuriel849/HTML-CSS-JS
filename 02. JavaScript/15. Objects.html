@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        var output = '';
+        var div = document.getElementById("output");
+
+        // window object -> Highest-level object in browser-based JavaScript
+        output += 'WINDOW';
+        for(var key in window) {
+            output += '*' + key + ' : ' + window[key] + '<br>';
+        }
+
+        // screen object -> Related to the computer's screen
+        output += '<br><br>SCREEN';
+        for(var key in screen) {
+            output += '*' + key + ' : ' + screen[key] + '<br>';
+        }
+
+        // location object -> Information on the address bar
+        output += '<br><br>LOCATION';
+        for(var key in location) {
+            output += '*' + key + ' : ' + location[key] + '<br>';
+        }
+
+        // navigator object -> Information on the browser being used
+        output += '<br><br>NAVIGATOR'
+        for(var key in navigator) {
+            output += '*' + key + ' : ' + navigator[key] + '<br>';
+        }
+
+        div.innerHTML = output;
+    </script>
+</body>
+</html>
