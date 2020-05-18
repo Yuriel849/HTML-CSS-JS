@@ -6,11 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="clock"></h1>
     <div id="output"></div>
 
     <script>
         var output = '';
         var div = document.getElementById("output");
+        var clock = document.getElementById("clock");
+
+        setInterval(function() {
+            clock.innerHTML = new Date().toString();
+        }, 1000);
 
         // window object -> Highest-level object in browser-based JavaScript
         output += 'WINDOW';
