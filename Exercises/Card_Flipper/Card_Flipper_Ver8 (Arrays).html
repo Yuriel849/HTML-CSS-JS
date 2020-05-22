@@ -79,9 +79,10 @@
         // click한 카드 한 장을 뒤집는다.
         function clickImgTag(e) {
             console.dir(e);
+            console.dir(this.src);
             var data = e.srcElement;
-            if(this.src !== "http://127.0.0.1:57803/Exercises/Card_Flipper/back.png") {
-                this.src = back;
+            if(this.src !== "http://127.0.0.1:54762/Exercises/Card_Flipper/Images/back.png") {
+                this.src = back; // Flipping the card front and back repeatedly only functions when this file path is valid
             }
             else {
                 this.src = path + data.getAttribute("data-value") + ".png";
